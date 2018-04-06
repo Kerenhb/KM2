@@ -1,0 +1,17 @@
+{
+  "name": "KM2-Project",
+  "version": "1.0.0",
+  "main": "src/client/index.js",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "mssql": "^4.1.0",
+    "mysql": "^2.15.0"
+  },
+  "scripts": {
+    "test": "echo 'No test script specified'"
+  },
+  "keywords": [],
+  "author": "Keren Berelson",
+  "description": "A program for calculating your preferred role in a team"
+}
