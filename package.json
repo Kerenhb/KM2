@@ -5,11 +5,13 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.2",
+    "express": "^4.16.3",
     "mssql": "^4.1.0",
     "mysql": "^2.15.0"
   },
   "scripts": {
-    "test": "echo 'No test script specified'"
+    "test": "echo 'No test script specified'",
+    "start": "node src/server"
   },
   "keywords": [],
   "author": "Keren Berelson",
