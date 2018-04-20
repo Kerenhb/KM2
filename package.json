@@ -11,9 +11,14 @@
   },
   "scripts": {
     "test": "echo 'No test script specified'",
-    "start": "node src/server"
+    "start": "babel-node src/server/index.js --presets es2015,stage-2"
   },
   "keywords": [],
   "author": "Keren Berelson",
-  "description": "A program for calculating your preferred role in a team"
+  "description": "A program for calculating your preferred role in a team",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
 }

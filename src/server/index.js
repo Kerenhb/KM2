@@ -1,14 +1,14 @@
-var express = require('express');
-var sql = require("mssql");
-var mysql = require('mysql');
-var bodyParser = require('body-parser');
+import express from 'express';
+import sql from 'mssql';
+import mysql from 'mysql';
+import bodyParser from 'body-parser';
 
-var app = express();
+const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(5000);
 
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : 'root1234',
