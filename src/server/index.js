@@ -3,6 +3,8 @@ import sql from 'mssql';
 import mysql from 'mysql';
 import bodyParser from 'body-parser';
 
+import { setup } from './setup';
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +19,7 @@ const connection = mysql.createConnection({
   
   connection.connect()
   console.log('Connected...')
+  setup(connection);
 
 // routes (get, post, etc) -> put into separate file
 app.post("/user", function(req, res) {
