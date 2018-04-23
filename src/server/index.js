@@ -17,9 +17,9 @@ const connection = mysql.createConnection({
     database : 'KM2 Project'
   });
   
-  connection.connect()
-  console.log('Connected...')
+  connection.connect();
   setup(connection);
+  console.log('Connected...');
 
 // routes (get, post, etc) -> put into separate file
 app.post("/user", function(req, res) {
@@ -43,5 +43,5 @@ app.get("/getUsers", function(req, res) {
 
 process.on('exit', function () {
     console.log('About to exit.');
-    connection.end()
+    connection.end();
 });
