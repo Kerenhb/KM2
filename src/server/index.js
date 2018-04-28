@@ -3,26 +3,15 @@ import sql from 'mssql';
 import mysql from 'mysql';
 import bodyParser from 'body-parser';
 
-import { setup } from './setup';
+import * as db from './connectionHandler';
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'root1234',
-    database : 'KM2 Project'
-  });
   
-  connection.connect(function(err) {
-    if (err) throw err;
-
-    setup(connection);
-    app.listen(5000);
-    console.log('Connected...');
-  });
+const connection = db.connect();
+app.listen(5000);
 
 // routes (get, post, etc) -> put into separate file
 app.post("/user", function(req, res) {
@@ -45,6 +34,6 @@ app.get("/getUsers", function(req, res) {
 });
 
 process.on('exit', function () {
-    console.log('About to exit.');
-    connection.end();
+    console.log('About to exit');
+    db.end();
 });
