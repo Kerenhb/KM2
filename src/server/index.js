@@ -8,7 +8,6 @@ import { setup } from './setup';
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.listen(5000);
 
 const connection = mysql.createConnection({
     host     : 'localhost',
@@ -17,16 +16,20 @@ const connection = mysql.createConnection({
     database : 'KM2 Project'
   });
   
-  connection.connect();
-  setup(connection);
-  console.log('Connected...');
+  connection.connect(function(err) {
+    if (err) throw err;
+
+    setup(connection);
+    app.listen(5000);
+    console.log('Connected...');
+  });
 
 // routes (get, post, etc) -> put into separate file
 app.post("/user", function(req, res) {
     const body = req.body;
 
     connection.query("INSERT INTO Users (Role, Username, TempPassword, Name) VALUES ?",
-     [[[body.Role, body.Username, body.TempPassword, body.Name]]], function (error, results) {
+    [[[body.Role, body.Username, body.TempPassword, body.Name]]], function (error, results) {
         if (error) throw error;
     });
 
