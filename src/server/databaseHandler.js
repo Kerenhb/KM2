@@ -15,7 +15,7 @@ export function connect(mode, done) {
     if (err) throw err;
 
     setup(connection);
-    console.log('Connected...');
+    console.log('Connection added');
   });
 
   return connection;
