@@ -1,8 +1,15 @@
 # KM2
 A program to help you find your preferred role in a team, created for my apprenticeship.
 
+## Scripts
+### Start
+Start both the client and the server with 'npm start'. 'npm run client' and 'npm run server' start the server and client separately if needed.
+Note: 'npm run dev' won't work.
+### Test
+Test both the client and the server with 'npm test'. 'npm run client:test' and 'npm run server:test' test the server and client separately if needed.
+
 ## Client
--Not yet created-
+Created with the help of create-react-app.
 
 ## Server
 A node based back-end with the following routes:
