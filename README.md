@@ -1,5 +1,6 @@
 # KM2
 A program to help you find your preferred role in a team, created for my apprenticeship.
+The program is based of a questionnaire from Stellar Leadership (http://stellarleadership.com/).
 
 ## Scripts
 ### Start
@@ -12,8 +13,9 @@ Test both the client and the server with 'npm test'. 'npm run client:test' and '
 Created with the help of create-react-app.
 
 ## Server
-A node based back-end with the following routes:
-- ...
+A node based back-end with the following routes (to be updated with as per documentation periodically):
+- [POST] /user: Inserts user data into the User Table of the database,
+- [GET] /getUsers: Returns the full list of users currently in the User Table.
 
 See documentation for more details: https://docs.google.com/document/d/1IqqEjRRCGs8qVa1y7qefd4sCgad9CNUGnzrefcDDGEw/edit?usp=sharing
 ## Database
@@ -45,3 +47,8 @@ A mySQL database with the following tables and data:
     - ME: TinyInt(100), Unsigned, Not Null
     - TW: TinyInt(100), Unsigned, Not Null
     - CF: TinyInt(100), Unsigned, Not Null
+
+## Documentation
+- API: https://docs.google.com/document/d/1IqqEjRRCGs8qVa1y7qefd4sCgad9CNUGnzrefcDDGEw/edit?usp=sharing
+- Database format: https://docs.google.com/spreadsheets/d/1aBtMbIPRwCg3xG-e69a2eqrTV2UqRQk_hm_EdV5_t3I/edit?usp=sharing
+- PDF of original questionnaire: http://careerweb.leeds.ac.uk/download/downloads/id/250/team_roles or https://drive.google.com/file/d/1JSlL1EQfzibYRz-jOjEnSQrnTOKXXazE/view?usp=sharing
