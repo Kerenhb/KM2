@@ -1,8 +1,17 @@
-import * as db from '../databaseHandler';
 import express from 'express';
+import mysql from 'mysql';
+import { setup } from './setup';
+
 const router = express.Router();
 
-const connection = db.get() || db.connect();
+const connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'root1234',
+    database : 'KM2 Project'
+  })
+
+setup(connection);
 
 router.post("/user", function(req, res) {
     const body = req.body;
