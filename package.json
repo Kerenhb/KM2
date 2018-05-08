@@ -1,5 +1,5 @@
 {
-  "name": "KM2-Project",
+  "name": "km2_project",
   "version": "1.0.0",
   "main": "src/client/index.js",
   "private": true,
