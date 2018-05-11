@@ -1,20 +1,21 @@
 {
-    "Sections": [
-      {
-        "SectionNumber": 0,
-        "TitleText": "Example",
+  "sections": [
+    {
+      "sectionNumber": 0,
+      "titleText": "Example",
+      "categories": {
         "a": "I am outgoing, cheerful and enjoy socialising",
         "b": "I am introverted and inward-looking and generally prefer my own company",
         "c": "I have a small circle of close friends, all of whom I have known for some time",
         "d": "I have a wide circle of acquaintances, all of whom are very different",
         "e": "I enjoy meeting people, but time alone is very important to me",
-        "f": "I have no more than five really important people in my life",
-        "g": "",
-        "h": ""
-      },
-      {
-        "SectionNumber": 1,
-        "TitleText": "The main contribution I make to a team is...",
+        "f": "I have no more than five really important people in my life"
+      }
+    },
+    {
+      "sectionNumber": 1,
+      "titleText": "The main contribution I make to a team is...",
+      "categories": {
         "a": "I think I can quickly see and take advantage of new opportunities",
         "b": "I can work well with a very wide range of people",
         "c": "Producing ideas is one of my natural assets",
@@ -23,10 +24,12 @@
         "f": "I am ready to face temporary unpopularity if it leads to worthwhile results in the end",
         "g": "I can usually sense what is unrealistic and unlikely to work",
         "h": "I can offer a reasoned case for alternative courses of action without introducing bias or prejudice"
-      },
-      {
-        "SectionNumber": 2,
-        "TitleText": "My shortcomings when working in a team are...",
+      }
+    },
+    {
+      "sectionNumber": 2,
+      "titleText": "My shortcomings when working in a team are...",
+      "categories": {
         "a": "I am not at ease unless meetings are well structured and controlled and generally well conducted",
         "b": "I am inclined to be too generous towards others who have a valid viewpoint that has not been given a proper airing",
         "c": "I have a tendency to talk too much once the group gets on to new ideas",
@@ -35,10 +38,12 @@
         "f": "I find it difficult to lead from the front, perhaps because I am over-responsive to group atmosphere",
         "g": "I am apt to get too caught up in ideas that occur to me and so lose track of what is happening",
         "h": "My colleagues tend to see me as worrying unnecessarily over detail and the possibility that things may go wrong"
-      },
-      {
-        "SectionNumber": 3,
-        "TitleText": "When involved in a project with other people...",
+      }
+    },
+    {
+      "sectionNumber": 3,
+      "titleText": "When involved in a project with other people...",
+      "categories": {
         "a": "I have an aptitude for influencing people without pressurising them",
         "b": "My general vigilance prevents careless mistakes and omissions being made",
         "c": "I am ready to press for action to make sure that the meeting does not waste time or lose sight of the main objective",
@@ -47,10 +52,12 @@
         "f": "I am keen to look for the latest in new ideas and developments",
         "g": "I believe my capacity for judgement can help to bring about the right decisions",
         "h": "I can be relied upon to see that all essential work is organised"
-      },
-      {
-        "SectionNumber": 4,
-        "TitleText": "My usual approach to team work is...",
+      }
+    },
+    {
+      "sectionNumber": 4,
+      "titleText": "My usual approach to team work is...",
+      "categories": {
         "a": "I have a quiet interest in getting to know colleagues better",
         "b": "I am not reluctant to challenge the views of others or hold a minority view myself",
         "c": "I can usually find a line of argument to refute unsound propositions",
@@ -59,10 +66,12 @@
         "f": "I bring a touch of perfectionism to any job I undertake",
         "g": "I am ready to make use of contacts outside the group itself",
         "h": "While I am interested in all views I have no hesitation in making up my mind once a decision has to be made"
-      },
-      {
-        "SectionNumber": 5,
-        "TitleText": "I gain satisfaction in a job because...",
+      }
+    },
+    {
+      "sectionNumber": 5,
+      "titleText": "I gain satisfaction in a job because...",
+      "categories": {
         "a": "I enjoy analysing situations and weighing up all the possible choices",
         "b": "I am interested in finding practical solutions to problems",
         "c": "I like fostering good working relationships",
@@ -71,10 +80,12 @@
         "f": "I can get people to agree on a necessary course of action",
         "g": "I feel in my element where I can give a task my full attention",
         "h": "I like to find a field that stretches my imagination"
-      },
-      {
-        "SectionNumber": 6,
-        "TitleText": "If I am suddenly asked to work on a difficult task with limited time and resources and unfamiliar people...",
+      }
+    },
+    {
+      "sectionNumber": 6,
+      "titleText": "If I am suddenly asked to work on a difficult task with limited time and resources and unfamiliar people...",
+      "categories": {
         "a": "I would feel like retiring to a corner to devise a way out of the impasse before developing a line",
         "b": "I would be ready to work with the person who showed the most positive approach",
         "c": "I would find some way of reducing the size of the task by establishing what different individuals might best contribute",
@@ -83,10 +94,12 @@
         "f": "I would retain a steadiness of purpose in spite of the pressures",
         "g": "I would be prepared to take a positive lead if I felt the group was making no progress",
         "h": "I would open up discussions with a view to stimulating new thoughts and getting something done"
-      },
-      {
-        "SectionNumber": 7,
-        "TitleText": "The main problems I experience when working on a team are...",
+      }
+    },
+    {
+      "sectionNumber": 7,
+      "titleText": "The main problems I experience when working on a team are...",
+      "categories": {
         "a": "I am apt to show my impatience with those who are obstructing progress",
         "b": "Others may criticise me for being too analytical and insufficiently intuitive",
         "c": "My desire to ensure that work is properly done can hold up proceedings",
@@ -96,5 +109,6 @@
         "g": "I am conscious of demanding from others the things I cannot do myself",
         "h": "I hesitate to get my points across when I run up against real opposition"
       }
-    ]
-  }
+    }
+  ]
+}
