@@ -13,11 +13,10 @@ Test both the client and the server with 'npm test'. 'npm run client:test' and '
 Created with the help of create-react-app.
 
 ## Server
-A node based back-end with the following routes (to be updated with as per documentation periodically):
+A node based back-end with the following routes (to be updated with as per API documentation periodically):
 - [POST] /user: Inserts user data into the User Table of the database,
 - [GET] /getUsers: Returns the full list of users currently in the User Table.
 
-See documentation for more details: https://docs.google.com/document/d/1IqqEjRRCGs8qVa1y7qefd4sCgad9CNUGnzrefcDDGEw/edit?usp=sharing
 ## Database
 A mySQL database with the following tables and data:
 - Permissions
