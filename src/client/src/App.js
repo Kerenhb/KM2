@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -18,11 +17,9 @@ class App extends Component {
         <header>
           <h1 className="App-title">Understanding Your Preferred Role in a Team</h1>
         </header>
-        <body>
-          <button onClick = {() => { this.getUsers() }}>
-            See all users
-          </button>
-        </body>
+        <button onClick = {() => { this.getUsers() }}>
+          See all users
+        </button>
       </div>
     );
   }
