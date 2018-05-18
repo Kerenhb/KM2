@@ -87,11 +87,16 @@ class Questionnaire extends Component {
   }
 
   render() {
+    const { currentSectionNumber } = this.state;
     return (
       <div className="Questionnaire">
-        {this.choosePage(this.state.currentSectionNumber)}
-        <input id="PrevButton" type="button" value="Prev" onClick={this.prevButtonHandler} />
-        <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />
+        {this.choosePage(currentSectionNumber)}
+
+        {currentSectionNumber > 0 &&
+          <input id="PrevButton" type="button" value="Prev" onClick={this.prevButtonHandler} />}
+        {currentSectionNumber < 7 &&
+          <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />}
+          
         {this.state.error && <span className='error'>
           Distribute a total of 10 points among the statements
         </span> }
