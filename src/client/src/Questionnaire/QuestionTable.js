@@ -4,14 +4,15 @@ import './QuestionTable.css';
 
 class QuestionTable extends Component {
 
-    drawRows = categories => {
+    drawRows = (categories, sectionNumber) => {
         let output = [];
-        for (const key in categories) {
+        for (const index in categories) {
             output.push(
-                <tr key = {key}>
-                    <td>{key}.</td>
-                    <td>{categories[key]}</td>
-                    <td></td>
+                <tr key = {`${sectionNumber}${index}`}>
+                    <td>{index}.</td>
+                    <td>{categories[index]}</td>
+                    <td><input type="number" id={`${sectionNumber}${index}`}
+                        placeholder='0' min='0' max='10'/></td>
                 </tr>
             )
         }
@@ -19,7 +20,7 @@ class QuestionTable extends Component {
     };
 
     render() {
-      const {className, titleText, categories } = this.props;
+      const {className, titleText, categories, sectionNumber } = this.props;
       return (
         <table className={className}>
             <thead><tr>
@@ -28,7 +29,7 @@ class QuestionTable extends Component {
                 <th>Allocation of Points</th>
             </tr></thead>
             <tbody>
-                {this.drawRows(categories)}
+                {this.drawRows(categories, sectionNumber)}
             </tbody>
         </table>
     );

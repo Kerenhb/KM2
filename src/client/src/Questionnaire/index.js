@@ -20,21 +20,25 @@ class Questionnaire extends Component {
       case 7:
         return (<QuestionPage data = {QuestionData.sections[index]}/>)
       default:
-        console.error('Invalid index'); 
+        console.error('Invalid section: Section', index, 'does not exist'); 
     }
   };
 
-  nextButtonHandler = () => {
+  buttonHandler = delta => () => {
     this.setState(
-      (prevState,props) => { return {questionNumber: prevState.questionNumber + 1}; }
+      (prevState,props) => { return {questionNumber: prevState.questionNumber + delta}; }
    );
   }
-  
+
   render() {
+    // const prevButtonHandler = this.buttonHandler(-1);
+    const nextButtonHandler = this.buttonHandler(+1);
+
     return (
       <div className="Questionnaire">
         {this.choosePage(this.state.questionNumber)}
-        <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />
+        {/* <input id="PrevButton" type="button" value="Prev" onClick={prevButtonHandler} /> */}
+        <input id="NextButton" type="button" value="Next" onClick={nextButtonHandler} />
       </div>
     );
   }

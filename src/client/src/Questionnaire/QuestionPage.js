@@ -4,14 +4,15 @@ import QuestionTable from './QuestionTable';
 class QuestionPage extends Component {
   render() {
       const { data } = this.props;
-
+    const { sectionNumber, titleText, categories } = data;
       return (
-      <div className={`Section ${data.sectionNumber}`}>
-        <h1>{`Section ${data.sectionNumber}`}</h1>
+      <div className={`Section ${sectionNumber}`}>
+        <h1>{`Section ${sectionNumber}`}</h1>
         <QuestionTable
-          className = {`Section${data.sectionNumber} Table`}
-          titleText = {data.titleText}
-          categories = {data.categories}
+          className = {`Section${sectionNumber} Table`}
+          titleText = {titleText}
+          categories = {categories}
+          sectionNumber = {sectionNumber}
         />
       </div>
     );
