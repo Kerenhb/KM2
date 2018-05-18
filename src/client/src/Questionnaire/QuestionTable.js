@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './QuestionTable.css';
+import './Questionnaire.css';
 
 class QuestionTable extends Component {
     componentWillMount() {
         this.setState({ answers : this.props.answers })
     }
     onChange = (part, event) => {
-        const { value } = event.target;
+        let { value } = event.target;
+        value = parseInt(value, 10);
         this.props.onChange(value, part);
 
         const answers = this.state.answers;
@@ -26,7 +27,7 @@ class QuestionTable extends Component {
                         <input
                             type="number"
                             id={`${sectionNumber}${part}`}
-                            placeholder='0' min='0' max='10'
+                            placeholder={0} min={0} max={10}
                             onChange={(event) => this.onChange(part, event)}
                             value={this.state.answers[part]}
                         />

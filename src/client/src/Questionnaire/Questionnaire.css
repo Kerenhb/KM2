@@ -3,3 +3,9 @@ table, th, td {
     border-collapse: collapse;
     padding: 5px;
 }
+
+span, error {
+    color: red;
+    font-weight: bold;
+    padding-left: 5em;
+}

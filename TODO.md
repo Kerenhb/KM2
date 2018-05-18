@@ -7,10 +7,12 @@ Build basic Client side react application and begin to add in routes and endpoin
 Basically more of a thin-slice agile development method.
 
 **Next:** Add in basic questionnaire section so you can answer each question one at a time and then submit your results (which saves it to the database).
-- Sum of the inputs must be exactly 10 (validate on clicking next)
+- Hide prev/next button when at start/end of options
+
+- Store example text as with the other pages
 
 - Submit button
-    - Add a time-code of when you took the test
+    - Add a time-code of when you took the test    
     
 **Then:** Login screen with proper [hashed] security.
 
