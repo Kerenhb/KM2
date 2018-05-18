@@ -17,9 +17,9 @@ class Questionnaire extends Component {
       section7: {}
     });
   }
-  choosePage = sectionNumber => {
-    switch(sectionNumber){
-      case 0: return (<LandingPage exampleData = {QuestionData.sections[0]}/>)
+  choosePage = currentSectionNumber => {
+    switch(currentSectionNumber){
+      case 0: return <LandingPage exampleData = {QuestionData.sections[0]}/>
       case 1:
       case 2:
       case 3:
@@ -27,12 +27,14 @@ class Questionnaire extends Component {
       case 5:
       case 6:
       case 7:
-        return (<QuestionPage
-          data = {QuestionData.sections[sectionNumber]}
-          onChange = {this.updateAnswers(sectionNumber)}
-        />)
+        return <QuestionPage
+          key = {currentSectionNumber}
+          data = {QuestionData.sections[currentSectionNumber]}
+          onChange = {this.updateAnswers(currentSectionNumber)}
+          answers = {this.state[`section${currentSectionNumber}`]}
+        />
       default:
-        console.error('Invalid section: Section', sectionNumber, 'does not exist'); 
+        console.error('Invalid section: Section', currentSectionNumber, 'does not exist'); 
     }
   };
 
@@ -48,13 +50,13 @@ class Questionnaire extends Component {
   }
 
   render() {
-    // const prevButtonHandler = this.buttonHandler(-1);
+    const prevButtonHandler = this.buttonHandler(-1);
     const nextButtonHandler = this.buttonHandler(+1);
 
     return (
       <div className="Questionnaire">
         {this.choosePage(this.state.currentSectionNumber)}
-        {/* <input id="PrevButton" type="button" value="Prev" onClick={prevButtonHandler} /> */}
+        <input id="PrevButton" type="button" value="Prev" onClick={prevButtonHandler} />
         <input id="NextButton" type="button" value="Next" onClick={nextButtonHandler} />
       </div>
     );

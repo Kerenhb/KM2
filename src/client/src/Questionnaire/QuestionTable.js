@@ -3,8 +3,16 @@ import PropTypes from 'prop-types';
 import './QuestionTable.css';
 
 class QuestionTable extends Component {
+    componentWillMount() {
+        this.setState({ answers : this.props.answers })
+    }
     onChange = (part, event) => {
-        this.props.onChange(event.target.value, part); 
+        const { value } = event.target;
+        this.props.onChange(value, part);
+
+        const answers = this.state.answers;
+        answers[part] = value;
+        this.setState({ answers });
       }
 
     drawRows = (categories, sectionNumber) => {
@@ -14,11 +22,15 @@ class QuestionTable extends Component {
                 <tr key = {`${sectionNumber}${part}`}>
                     <td>{part}.</td>
                     <td>{categories[part]}</td>
-                    <td><input
-                        type="number"
-                        id={`${sectionNumber}${part}`}
-                        placeholder='0' min='0' max='10'
-                        onChange={(event) => this.onChange(part, event)}/></td>
+                    <td>
+                        <input
+                            type="number"
+                            id={`${sectionNumber}${part}`}
+                            placeholder='0' min='0' max='10'
+                            onChange={(event) => this.onChange(part, event)}
+                            value={this.state.answers[part]}
+                        />
+                    </td>
                 </tr>
             )
         }
@@ -48,6 +60,7 @@ QuestionTable.propTypes = {
     categories : PropTypes.object.isRequired,
     sectionNumber : PropTypes.number,
     onChange : PropTypes.func,
+    answers : PropTypes.object.isRequired
 };
 
 QuestionTable.defaultProps = {

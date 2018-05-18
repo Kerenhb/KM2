@@ -14,6 +14,7 @@ class QuestionPage extends Component {
           categories = {categories}
           sectionNumber = {sectionNumber}
           onChange = {this.props.onChange}
+          answers = {this.props.answers}
         />
       </div>
     );

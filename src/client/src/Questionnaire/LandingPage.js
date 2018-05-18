@@ -31,6 +31,9 @@ class LandingPage extends Component {
           className = "landingPageTable"
           titleText = {exampleData.titleText}
           categories = {exampleData.categories}
+          answers = {{
+            a : 0, b : 3, c : 4, d : 0, e : 2, f : 1 
+          }}
         />
       </div>
     );

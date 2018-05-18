@@ -11,9 +11,6 @@ Basically more of a thin-slice agile development method.
 
 - Submit button
     - Add a time-code of when you took the test
-
-- Allow you to click prev (and pre-populate values from state)
-    - pre-fill example page on mounting
     
 **Then:** Login screen with proper [hashed] security.
 
