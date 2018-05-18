@@ -24,7 +24,11 @@ class LandingPage extends Component {
         </p>
         <p>  
           Give the most points to the statement which best describes 
-          your behaviour and the least points (or no points) to the statements that are least accurate or do not apply.
+          your behaviour and the least points (or no points) to the 
+          statements that are least accurate or do not apply.
+        </p>
+        <p>
+          The table below has been filled out with an example response.
         </p>
         
         <QuestionTable

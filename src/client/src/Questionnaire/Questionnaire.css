@@ -6,6 +6,6 @@ table, th, td {
 
 span, error {
     color: red;
-    font-weight: bold;
+    font-style: italic;
     padding-left: 5em;
 }

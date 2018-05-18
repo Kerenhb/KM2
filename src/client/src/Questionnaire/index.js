@@ -69,6 +69,8 @@ class Questionnaire extends Component {
     let total = 0;
     console.log(answers)
     for (const key in answers) {
+      if (answers < 0) return false
+      if (answers > 10) return false
       total += answers[key];
     }
     return total === 10;
@@ -77,7 +79,11 @@ class Questionnaire extends Component {
   updateAnswers = currentSectionNumber => (data, part) => {
     const currentSection = this.state[`section${currentSectionNumber}`];
     currentSection[part] = data;
-    this.setState({ [`section${currentSection}`] : currentSection });
+
+    this.setState({
+      [`section${currentSection}`] : currentSection,
+      error : false
+    });
   }
 
   render() {
@@ -87,8 +93,8 @@ class Questionnaire extends Component {
         <input id="PrevButton" type="button" value="Prev" onClick={this.prevButtonHandler} />
         <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />
         {this.state.error && <span className='error'>
-          The fields on this page must sum to exactly 10, before you can continue
-          </span> }
+          Distribute a total of 10 points among the statements
+        </span> }
       </div>
     );
   }
