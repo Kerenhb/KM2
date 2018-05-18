@@ -13,6 +13,7 @@ class QuestionPage extends Component {
           titleText = {titleText}
           categories = {categories}
           sectionNumber = {sectionNumber}
+          onChange = {this.props.onChange}
         />
       </div>
     );
