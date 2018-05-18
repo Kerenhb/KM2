@@ -13,8 +13,7 @@ Basically more of a thin-slice agile development method.
     - Perhaps input type number (limited 0-10)
         - Sum of them all must be exactly 10
     - Then perhaps trigger a callback on the question/landing page that adds the data to an array
-    - The page will then trigger a callback on the main index component when the user clicks the next button, loading up the next page and adding the data to either an array of arrays or an object of arrays.
-
+    
 **Then:** Login screen with proper [hashed] security.
 
 ## General Stuff

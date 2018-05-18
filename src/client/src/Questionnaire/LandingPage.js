@@ -3,10 +3,11 @@ import QuestionTable from './QuestionTable';
 
 class LandingPage extends Component {
   render() {
-      const { exampleText } = this.props;
+      const { exampleData } = this.props;
 
       return (
       <div className="landingPage">
+        <h1>Explanation</h1>
         <p>
           To determine which team role best describes your personality 
           and operating style, consider the statements in each of the 
@@ -28,8 +29,8 @@ class LandingPage extends Component {
         
         <QuestionTable
           className = "landingPageTable"
-          titleText = {exampleText.titleText}
-          categories = {exampleText.categories}
+          titleText = {exampleData.titleText}
+          categories = {exampleData.categories}
         />
       </div>
     );
