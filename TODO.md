@@ -7,7 +7,6 @@ Build basic Client side react application and begin to add in routes and endpoin
 Basically more of a thin-slice agile development method.
 
 **Next:** Add in basic questionnaire section so you can answer each question one at a time and then submit your results (which saves it to the database).
-- Ensure constant height of table (via padding?)
 - Submit button
     - Add a time-code of when you took the test    
 
