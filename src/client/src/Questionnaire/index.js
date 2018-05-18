@@ -67,7 +67,6 @@ class Questionnaire extends Component {
 
   validateAnswers = answers => {
     let total = 0;
-    console.log(answers)
     for (const key in answers) {
       if (answers < 0) return false
       if (answers > 10) return false
