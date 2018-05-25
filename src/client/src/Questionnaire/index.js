@@ -73,7 +73,12 @@ submitButtonHandler = () => {
   }
 
   const results = this.calculateResults();
-  console.log(results);
+  fetch('/user/1/test', { // TODO change to usersId
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ results })
+    })
+    .catch(err => console.log(`An error occurred: ${err}`))
 }
 
 calculateResults = () => {

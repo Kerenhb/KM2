@@ -1,6 +1,7 @@
 import express from 'express';
 import mysql from 'mysql';
 import { setup } from './setup';
+import * as utils from './databaseUtils';
 
 const router = express.Router();
 
@@ -13,23 +14,33 @@ const connection = mysql.createConnection({
 
 setup(connection);
 
-router.post("/user", function(req, res) {
-    const body = req.body;
+router.post("/user/:id/test", function(req, res) {
+    // TODO: Check user is authorised and add timestamp
+    const { id } = req.params;
+    const { results } = req.body;
 
-    connection.query("INSERT INTO Users (Role, Username, TempPassword, Name) VALUES ?",
-    [[[body.Role, body.Username, body.TempPassword, body.Name]]], function (error, results) {
-        if (error) throw error;
-    });
+    const found = checkUserId(id);
+    if (!found) return res.status(400).send('User not found');
 
-    res.send(body);
+    const sumWeights = results.reduce((acc, cur) => acc + cur);
+    if (sumWeights !== 70) return res.status(412).send('Weights must sum to 70');
+
+    connection.query(utils.insertTests(id, results),
+        function (err, results) {
+            if (err) res.status(500).send(err)
+            const testId = results.insertId;
+            res.status(200).send({testId : testId});
+        });
 });
 
-router.get("/getUsers", function(req, res) {
-    connection.query('SELECT * from Users', function (err, rows, fields) {
-        if (err) throw err
-
-        res.send(rows);
+async function checkUserId (id) {
+    let found;
+    await connection.query(utils.getRow('Users', id), function(err, result) {
+        if (result.length) found = true;
+        else found = false;
     });
-});
+
+    return found;
+};
 
 export default router;

@@ -50,10 +50,10 @@ export const setup = connection => {
     //connection.query(utils.insertUsers('User', 'Johnny', '1asd5', 'John Doe'), function (err) {if (err) throw err});
     //connection.query(utils.insertUsers('Admin', 'kerenhb', '42cf24', 'Keren Berelson', 'Pearson'), function (err) {if (err) throw err});
 
-    // connection.query(utils.insertTests(1, [10, 10, 10, 10, 10, 10, 10, 30]), function (err) {if (err) throw err});
-    // //connection.query(utils.insertTests(1, [10, 10, 10, 10, 10, 10, 10, 10]), function (err) {if (err) throw err}); // Should fail as total < 100
-    // //connection.query(utils.insertTests(1, [30, 30, 30, 30, 30, 30, 30, 30]), function (err) {if (err) throw err}); // Should fail as total > 100
-    // connection.query(utils.insertTests(1, [10, 15, 10, 15, 10, 15, 10, 15]), function (err) {if (err) throw err});
+    // connection.query(utils.insertTests(1, [10, 10, 10, 10, 10, 10, 10, 0]), function (err) {if (err) throw err});
+    // //connection.query(utils.insertTests(1, [10, 10, 10, 10, 10, 10, 10, 10]), function (err) {if (err) throw err}); // Should fail as total > 70
+    // //connection.query(utils.insertTests(1, [30, 30, 0, 0, 0, 0, 0, 0]), function (err) {if (err) throw err}); // Should fail as total < 70
+    // connection.query(utils.insertTests(1, [10, 0, 10, 15, 15, 0, 10, 10]), function (err) {if (err) throw err});
 
     // Print data
     // connection.query(utils.selectTable('Tests'), function (err, rows, fields) {

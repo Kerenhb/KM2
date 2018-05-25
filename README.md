@@ -14,8 +14,7 @@ Created with the help of create-react-app.
 
 ## Server
 A node based back-end with the following routes (to be updated with as per API documentation periodically):
-- [POST] /user: Inserts user data into the User Table of the database,
-- [GET] /getUsers: Returns the full list of users currently in the User Table.
+- [POST] /user/:id/test: Saves users latest test scores
 
 ## Database
 A mySQL database with the following tables and data:

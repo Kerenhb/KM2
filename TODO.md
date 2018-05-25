@@ -4,13 +4,12 @@ Build basic Client side react application and begin to add in routes and endpoin
 Basically more of a thin-slice agile development method.
 
 **Next:** Add in basic questionnaire section so you can answer each question one at a time and then submit your results (which saves it to the database).
-- Submit button
-    - Add a time-code of when you took the test
-    - Link to server endpoint
-- Add in some unit tests...
+- Add a time-code of when you took the test (server side)
+- Go to some sort of results screen showing your top 3 roles with descriptions after you submit
 - Deal with warning about going from unControlled to controlled input
-- Ensure that look of questionnaire matches the paper one
 - Attempt to make number input look better (increase the width to match the cell?)
+- Progress bar x/7?
+- Make a general fetch function (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 **Then:** Login screen with proper [hashed] security.
 
