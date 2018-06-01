@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import QuestionData from './QuestionData.json';
 import LandingPage from './LandingPage';
 import QuestionPage from './QuestionPage';
+import ResultsPage from './ResultsPage';
 
 class Questionnaire extends Component {
   componentWillMount = () => {
@@ -16,7 +17,9 @@ class Questionnaire extends Component {
       section5: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section6: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section7: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      error: false
+      error: false,
+      showResults: false,
+      results: []
     });
   }
   choosePage = currentSectionNumber => {
@@ -79,6 +82,8 @@ submitButtonHandler = () => {
       body: JSON.stringify({ results })
     })
     .catch(err => console.log(`An error occurred: ${err}`))
+
+    this.setState({ results, showResults: true }); // TODO: put into .then of fetch
 }
 
 calculateResults = () => {
@@ -119,18 +124,21 @@ calculateResults = () => {
   }
 
   render() {
-    const { currentSectionNumber } = this.state;
+    const { currentSectionNumber, results, showResults } = this.state;
     return (
       <div className="Questionnaire">
-        {this.choosePage(currentSectionNumber)}
+        {showResults ? 
+          <ResultsPage results={results} /> :
+          this.choosePage(currentSectionNumber)
+        }
 
-        {currentSectionNumber > 0 &&
+        {!showResults && currentSectionNumber > 0 &&
           <input id="PrevButton" type="button" value="Prev" onClick={this.prevButtonHandler} />}
-        {currentSectionNumber < 7 &&
+        {!showResults && currentSectionNumber < 7 &&
           <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />}
-          {currentSectionNumber === 7 &&
+        {!showResults && currentSectionNumber === 7 &&
           <input id="SubmitButton" type="button" value="Submit" onClick={this.submitButtonHandler} />}          
-        {this.state.error && <span className='error'>
+        {!showResults && this.state.error && <span className='error'>
           Distribute a total of 10 points among the statements
         </span> }
       </div>
