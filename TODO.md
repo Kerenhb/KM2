@@ -5,7 +5,6 @@ Basically more of a thin-slice agile development method.
 
 **Next:** Add in basic questionnaire section so you can answer each question one at a time and then submit your results (which saves it to the database).
 - Add a time-code of when you took the test (server side)
-- Improve results page to show the role descriptions and clearly identify your top 3 roles
 - Deal with warning about going from unControlled to controlled input
 - Attempt to make number input look better (increase the width to match the cell?)
 - Progress bar x/7?

@@ -1,0 +1,58 @@
+{
+    "IM": {
+      "Type": "Implementer",
+      "Features": "Good organiser who converts ideas into action. Conservative, dutiful, reliable, predictable.",
+      "Strengths": "Organising ability, practical common sense, hard working, self-discipline.",
+      "Weaknesses": "Lack of flexibility, unresponsiveness to unproven ideas. Resistant to change.",
+      "Summary": "An Implementer works best when allowed to work in an organised way"
+    },
+    "CO": {
+      "Type": "Coordinator",
+      "Features": "Calm, self-confident, controlled and diplomatic. Focused on overall results and a strong sense of objectives.",
+      "Strengths": "A capacity for treating and welcoming all potential contributors on their merits and without prejudice. Gets decisions.",
+      "Weaknesses": "Can be seen as aloof – above the team - or not 'one of the gang'. Seen as manipulative. Off loads detailed work.",
+      "Summary": "A Coordinator works best when there are clear objectives"
+    },
+    "SH": {
+      "Type": "Shaper",
+      "Features": "Outgoing, dynamic and highly strung. Results oriented and straight to action but pushy with others. Spring to action.",
+      "Strengths": "Drive and a readiness to challenge inertia, ineffectiveness, complacency or self-deception",
+      "Weaknesses": "Will do what it takes for results even if it upsets others. Prone to provocation, irritation and impatience. Bossy?",
+      "Summary": "A Shaper works best on own initiative and limited compromise"
+    },
+    "PL": {
+      "Type": "Plant",
+      "Features": "Individualistic, intelligent and creative. Serious-minded but unorthodox.",
+      "Strengths": "Imagination, intellect, knowledge. Ideas and original thought for problem solving.",
+      "Weaknesses": "Not a team player. Pre-occupied. Up in the clouds, inclined to disregard practical details or protocol",
+      "Summary": "A Plant works best on their own"
+    },
+    "RI": {
+      "Type": "Resource Investigator",
+      "Features": "Extroverted, enthusiastic, curious, communicative. Optimistic and good at networking.",
+      "Strengths": "A capacity for contacting people and exploring anything new. An ability to respond to challenge",
+      "Weaknesses": "Liable to lose interest once the initial fascination has passed. Easily bored and need recognition.",
+      "Summary": "A Resource Investigator works best when free to get out and meet people"
+    },
+    "ME": {
+      "Type": "Monitor Evaluator",
+      "Features": "Analytical, unemotional and prudent. Like to use facts.",
+      "Strengths": "Judgement, discretion, hard-headedness",
+      "Weaknesses": "Lack inspiration or the ability to motivate others. Lack humour and enthusiasm.",
+      "Summary": "A Monitor Evaluator works best when allowed to analyse facts"
+    },
+    "TW": {
+      "Type": "Team Worker",
+      "Features": "Socially oriented, rather mild, sensitive. Loyal and concerned.",
+      "Strengths": "An ability to respond to people and to situations and to promote team spirit.",
+      "Weaknesses": "Put people before results. Indecisiveness at moments of crisis.",
+      "Summary": "A Team Worker works best when given time and freedom to develop good relations"
+    },
+    "CF": {
+      "Type": "Completer Finisher",
+      "Features": "Meticulous and set high standards for self and others. Painstaking, orderly and conscientious.",
+      "Strengths": "A capacity for follow-through. Perfectionist. Self-driven. Delivers on time.",
+      "Weaknesses": "A tendency to worry about small things. A reluctance to 'let go'. Intolerant of the failure of others.",
+      "Summary": "A Completer Finisher works best when high standards expected and checked"
+    }
+  }
