@@ -15,6 +15,8 @@ Basically more of a thin-slice agile development method.
 
 ## General Stuff
 - Unit tests!
+- Database normalisation
+- Documentation
 - Prevent SQL injection
 - ~~Add endpoints for each use-case~~
     - ~~with proper checking (verification, permissions, etc)~~
