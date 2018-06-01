@@ -7,7 +7,6 @@ Basically more of a thin-slice agile development method.
 - Add a time-code of when you took the test (server side)
 - Deal with warning about going from unControlled to controlled input
 - Attempt to make number input look better (increase the width to match the cell?)
-- Progress bar x/7?
 - Make a general fetch function (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 **Then:** Login screen with proper [hashed] security.

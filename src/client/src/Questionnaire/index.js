@@ -141,6 +141,8 @@ calculateResults = () => {
         {!showResults && this.state.error && <span className='error'>
           Distribute a total of 10 points among the statements
         </span> }
+        {!showResults && currentSectionNumber < 8 &&
+          <progress value={currentSectionNumber} max="8"></progress>}
       </div>
     );
   }

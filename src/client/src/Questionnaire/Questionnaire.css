@@ -19,3 +19,8 @@ th, td {
     font-style: italic;
     padding-left: 5em;
 }
+
+progress {
+    float: right;
+    width: 300px;
+}
