@@ -9,6 +9,8 @@ Basically more of a thin-slice agile development method.
 - Attempt to make number input look better (increase the width to match the cell?)
 - Make a general fetch function (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
+- Fix issue with doing sending '400: User not found' error when invalid userID is used on the /user/:userID/test endpoint (see hipChat with Iqbal)
+
 **Then:** Login screen with proper [hashed] security.
 
 ## General Stuff
