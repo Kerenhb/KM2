@@ -10,8 +10,10 @@ Basically more of a thin-slice agile development method.
 - Make a general fetch function (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 - Fix issue with doing sending '400: User not found' error when invalid userID is used on the /user/:userID/test endpoint (see hipChat with Iqbal)
+    - Just throw an error from within the function and catch outside it?
 
 **Then:** Login screen with proper [hashed] security.
+- passport.js?
 
 ## General Stuff
 - Unit tests!
