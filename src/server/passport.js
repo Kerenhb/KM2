@@ -19,11 +19,9 @@ export function passportConfig(passport, connection) {
           connection.query(`SELECT * FROM Users WHERE Username = '${username}'`, // TODO: add hashing
             function(err, users){
               const user = users[0];
-              console.log(user)
               if (err) return done(err);
               if (!user) return done(null, false, { message: 'Incorrect username.' });
               if (user.Password != password) return done(null, false, { message: 'Incorrect password.' });
-              console.log('Success!');
               return done(null, user);	
             });
       }));
