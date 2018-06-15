@@ -21,6 +21,11 @@ router.post('/login', passport.authenticate('local-login', {
     successRedirect: '/Questionnaire', failureRedirect: '/login'
 }));
 
+router.get('/verify', function(req, res) {
+  if (req.isAuthenticated()) return res.status(200).send({ user: req.user, loggedIn: true });
+  return res.status(200).send({ user: null, loggedIn: false });
+});
+
 router.post('/user/:id/test', ensureAuthenticated, function(req, res) {
     // TODO: add timestamp
     const { id } = req.params;
