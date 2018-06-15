@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Questionnaire from './Questionnaire/index';
+import Root from './Root';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Questionnaire />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));
 registerServiceWorker();
