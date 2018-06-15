@@ -79,6 +79,7 @@ submitButtonHandler = () => {
   fetch('/user/1/test', { // TODO change to usersId
       method: 'POST',
       headers: { 'content-type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ results })
     })
     .catch(err => console.log(`An error occurred: ${err}`))

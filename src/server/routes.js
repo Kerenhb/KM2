@@ -18,19 +18,13 @@ setup(connection);
 passportConfig(passport, connection);
 
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/Questionnaire', failureRedirect: '/login',
-    // failureFlash: true
-    // failureFlash: 'Invalid username or password', successFlash: 'Welcome!'
-})
-);
+    successRedirect: '/Questionnaire', failureRedirect: '/login'
+}));
 
-router.post("/user/:id/test", function(req, res) {
-    // TODO: Check user is authorised and add timestamp
+router.post('/user/:id/test', ensureAuthenticated, function(req, res) {
+    // TODO: add timestamp
     const { id } = req.params;
     const { results } = req.body;
-
-    const found = checkUserId(id);
-    if (!found) return res.status(400).send('User not found');
 
     const sumWeights = results.reduce((acc, cur) => acc + cur);
     if (sumWeights !== 70) return res.status(412).send('Weights must sum to 70');
@@ -43,14 +37,11 @@ router.post("/user/:id/test", function(req, res) {
         });
 });
 
-async function checkUserId (id) {
-    let found;
-    await connection.query(utils.getRow('Users', id), function(err, result) {
-        if (result.length) found = true;
-        else found = false;
-    });
-
-    return found;
+function ensureAuthenticated(req, res, next) {
+  console.log('ensureAuthenticated called:', req.isAuthenticated())
+  if (req.isAuthenticated())
+    return next();
+    res.status(401).send('Unauthorized');
 };
 
 export default router;
