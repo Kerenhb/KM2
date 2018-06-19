@@ -7,7 +7,6 @@
 
 *Security* Login screen with proper [hashed] security.
 - Link up error page
-- add authorisation to all internal pages (Questionnaire)
 - add logout functionally 
 - add history functionally
 - add sign-up functionally

@@ -5,8 +5,14 @@ import Questionnaire from './Questionnaire/index';
 import Login from './Login';
 
 export default class Root extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { loggedIn : false }
+  }
   privateRoute = (DestinationComponent) => {
-    const loggedIn = false;// await this.isAuthenticated();
+    const { loggedIn } = this.state;
+    if(!loggedIn) this.isAuthenticated();
+
     let finalComponent = <Redirect to={{pathname: '/login'}}/>;
     if(loggedIn) finalComponent = <DestinationComponent />;
 
@@ -21,7 +27,7 @@ isAuthenticated = async () => {
       })
 
       const result = await response.json();
-      return result.loggedIn;
+      this.setState({ loggedIn : result.loggedIn });
 };
 
     render() {
