@@ -11,13 +11,9 @@ const replaceNull = value => {
         return 'NULL';
 };
 
-export const insertPermissions = (Role, TakeTest, ViewResults, AddUser, DeleteUser, EditUser) => {
-    return `INSERT INTO Permissions (Role, TakeTest, ViewResults, AddUser, DeleteUser, EditUser)
-    Values (${replaceNull(Role)}, ${replaceNull(TakeTest)}, ${replaceNull(ViewResults)}, ${replaceNull(AddUser)}, ${replaceNull(DeleteUser)}, ${replaceNull(EditUser)});`
-};
-export const insertUsers = (Role, Username, TempPassword, Name, Organisation) => {
-    return `INSERT INTO Users (Role, Username, TempPassword, Name, Organisation)
-    Values (${replaceNull(Role)}, ${replaceNull(Username)}, ${replaceNull(TempPassword)}, ${replaceNull(Name)}, ${replaceNull(Organisation)});`
+export const insertUsers = (Role, Username, Password, Name, Organisation) => {
+    return `INSERT INTO Users (Role, Username, Password, Name, Organisation)
+    Values (${replaceNull(Role)}, ${replaceNull(Username)}, ${replaceNull(Password)}, ${replaceNull(Name)}, ${replaceNull(Organisation)});`
 };
 export const insertTests = (UserID, weights) => {
     return `INSERT INTO Tests (UserID, IM, CO, SH, PL, RI, ME, TW, CF)
