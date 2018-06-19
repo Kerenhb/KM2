@@ -14,21 +14,15 @@ Created with the help of create-react-app.
 
 ## Server
 A node based back-end with the following routes (to be updated with as per API documentation periodically):
-- [POST] /user/:id/test: Saves users latest test scores
+- [POST] /user/test: Saves users latest test scores
+- [POST] /login: Enables users to login using passport.js
+- [GET] /verify: Lets you know if the user is currently logged in and if so, who they are
 
 ## Database
 A mySQL database with the following tables and data:
-- Permissions
-    - Role: VarChar(10), Not Null, Primary Key
-    - TakeTest: Binary, Not Null
-    - ViewResults: Binary, Not Null
-    - AddUser: Binary, Not Null
-    - DeleteUser: Binary, Not Null
-    - EditUser: Binary, Not Null
-
 - Users
     - ID: TinyInt, Primary Key (auto increment)
-    - Role: Foreign Key (Permissions)
+    - Role: VarChar(10), NOT NULL
     - Username: VarChar(255), Not Null
     - Password: VarChar(255), Not Null
     - Name: : VarChar(255)
