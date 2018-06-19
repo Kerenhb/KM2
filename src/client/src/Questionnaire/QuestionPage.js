@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuestionTable from './QuestionTable';
 
-class QuestionPage extends Component {
+class QuestionPage extends Component { // Main question page
   render() {
       const { data } = this.props;
     const { sectionNumber, titleText, categories } = data;

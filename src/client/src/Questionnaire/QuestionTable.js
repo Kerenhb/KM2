@@ -8,7 +8,7 @@ class QuestionTable extends Component {
     }
     onChange = (part, event) => {
         let { value } = event.target;
-        value = parseInt(value, 10);
+        value = parseInt(value, 10); // String to int (base 10)
         this.props.onChange(value, part);
 
         const answers = this.state.answers;

@@ -16,15 +16,15 @@ export function passportConfig(passport, connection) {
       // Login
       passport.use('local-login', new LocalStrategyStrategy(
         function(username, password, done) {
-          connection.query(`SELECT * FROM Users WHERE Username = '${username}'`, // TODO: add hashing
+          connection.query(`SELECT * FROM Users WHERE Username = '${username}'`, // TODO: add hashing, prevent SQL injection
             function(err, users){
               const user = users[0];
               if (err) return done(err);
-              if (!user) return done(null, false, { message: 'Incorrect username.' });
+              if (!user) return done(null, false, { message: 'Incorrect username.' }); // messages ignored currently
               if (user.Password != password) return done(null, false, { message: 'Incorrect password.' });
               return done(null, user);	
             });
       }));
       
-      //Signup
+      // TODO: Signup
 };

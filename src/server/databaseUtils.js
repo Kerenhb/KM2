@@ -8,7 +8,7 @@ const replaceNull = value => {
     if(typeof value != "undefined")
         return `'${value}'`;
     else
-        return 'NULL';
+        return 'NULL'; // rather than javascript's undefined 
 };
 
 export const insertUsers = (Role, Username, Password, Name, Organisation) => {

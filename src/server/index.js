@@ -6,6 +6,7 @@ import routes from './routes';
 
 const app = express();
 
+// Set up express database connection
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'shhh...', saveUninitialized: true, resave: true }));

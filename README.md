@@ -10,7 +10,7 @@ Note: 'npm run dev' won't work.
 Test both the client and the server with 'npm test'. 'npm run client:test' and 'npm run server:test' test the server and client separately if needed.
 
 ## Client
-Created with the help of create-react-app.
+Created with the help of create-react-app. Note that after logging in you need to select the Questionnaire again, as there is a async check happening and you can't access the Questionaire unless your logged in.
 
 ## Server
 A node based back-end with the following routes (to be updated with as per API documentation periodically):

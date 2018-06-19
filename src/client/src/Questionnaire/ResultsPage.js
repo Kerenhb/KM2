@@ -10,13 +10,13 @@ class ResultsPage extends Component {
     const parsedResults = results.map( (result, index) => 
         ({
             role: roleKeys[index],
-            percentage: Math.round(result / 0.7),
+            percentage: Math.round(result / 0.7), // turn to percentage * (70/100)
         }));
 
     return parsedResults.sort(function(a,b) { return b.percentage - a.percentage })
   };
 
-  constructRow = (role) => {
+  constructRow = (role) => { // Top three roles
       return (<tr>
         <td rowSpan='2'>{RoleDescriptions[role].Type}</td>
         <td>{RoleDescriptions[role].Features}</td>
@@ -25,7 +25,7 @@ class ResultsPage extends Component {
     </tr>)
   };
 
-  constructDetailedRows = results => {
+  constructDetailedRows = results => { // All rows
     let rows = [];
     for (let i = 0; i < 8; i++) {
         rows.push(

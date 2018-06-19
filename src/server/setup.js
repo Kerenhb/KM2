@@ -24,15 +24,15 @@ const createTests = `CREATE TABLE IF NOT EXISTS Tests (
 );`;
 
 export const setup = connection => {
-    // Delete
+    // Delete tables
     connection.query(utils.dropTable('Tests'), function (err) {if (err) throw err});
     connection.query(utils.dropTable('Users'), function (err) {if (err) throw err});
 
-    // Create new
+    // Create tables
     connection.query(createUsers, function (err) {if (err) throw err});
     connection.query(createTests, function (err) {if (err) throw err});
 
-    // Insert test data
+    // Insert users into table
     connection.query(utils.insertUsers('User', 'Johnny', '1234', 'John Doe'), function (err) {if (err) throw err});
     connection.query(utils.insertUsers('Admin', 'kerenhb', 'abcd', 'Keren Berelson', 'Pearson'), function (err) {if (err) throw err});
 };

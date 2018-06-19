@@ -9,7 +9,7 @@ class Questionnaire extends Component {
   componentWillMount = () => {
     this.setState({
       currentSectionNumber: 0,
-      section0: { a : 0, b : 3, c : 4, d : 0, e : 2, f : 1, g : 0, h : 0 },
+      section0: { a : 0, b : 3, c : 4, d : 0, e : 2, f : 1, g : 0, h : 0 }, // For example page
       section1: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section2: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section3: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
@@ -17,12 +17,12 @@ class Questionnaire extends Component {
       section5: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section6: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
       section7: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      error: false,
-      showResults: false,
+      error: false, // Prevent changing page if there's an error
+      showResults: false, // Only show the results when the questionnaire has been answered
       results: []
     });
   }
-  choosePage = currentSectionNumber => {
+  choosePage = currentSectionNumber => { // Which page to render
     switch(currentSectionNumber){
       case 0: return <LandingPage
         exampleData = {QuestionData.sections[0]}
@@ -41,7 +41,7 @@ class Questionnaire extends Component {
           onChange = {this.updateAnswers(currentSectionNumber)}
           answers = {this.state[`section${currentSectionNumber}`]}
         />
-      default:
+      default: // Just in case
         console.error('Invalid section: Section', currentSectionNumber, 'does not exist'); 
     }
   };
@@ -50,9 +50,9 @@ class Questionnaire extends Component {
     this.setState(
       (prevState, props) => {
         const error = !this.validateAnswers(prevState[`section${prevState.currentSectionNumber}`])
-        if (error) return { error }
+        if (error) return { error } // Can't click next if there's an error!
         return {
-          currentSectionNumber: prevState.currentSectionNumber + 1,
+          currentSectionNumber: prevState.currentSectionNumber + 1, // Next page
           error : false
         };
       });
@@ -62,7 +62,7 @@ class Questionnaire extends Component {
     this.setState(
       (prevState, props) => {
         return {
-          currentSectionNumber: prevState.currentSectionNumber - 1,
+          currentSectionNumber: prevState.currentSectionNumber - 1, // Previous page
           error : false
         };
       });
@@ -72,11 +72,11 @@ submitButtonHandler = () => {
   const error = !this.validateAnswers(this.state[`section${this.state.currentSectionNumber}`]);
   if (error) {
     this.setState({error})
-    return;
+    return; // Can't submit if there's an error
   }
 
   const results = this.calculateResults();
-  fetch('/user/test', {
+  fetch('/user/test', { // Save results to the database
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       credentials: 'include',
@@ -100,23 +100,23 @@ calculateResults = () => {
     section1.e + section2.h + section3.b + section4.f + section5.g + section6.d + section7.c,
   ];
 
-  console.assert(results.reduce((acc, curr) => acc + curr) === 70, 'Results do not sum to 70!');
+  console.assert(results.reduce((acc, curr) => acc + curr) === 70, 'Results do not sum to 70!'); // Quick check
   return results
 }
 
   validateAnswers = answers => {
     let total = 0;
     for (const key in answers) {
-      if (answers < 0) return false
-      if (answers > 10) return false
+      if (answers < 0) return false // Can't be negative
+      if (answers > 10) return false // Can't be too big
       total += answers[key];
     }
-    return total === 10;
+    return total === 10; // Total must be exactly equal to 10
   }
 
   updateAnswers = currentSectionNumber => (data, part) => {
     const currentSection = this.state[`section${currentSectionNumber}`];
-    currentSection[part] = data;
+    currentSection[part] = data; // new incoming data
 
     this.setState({
       [`section${currentSection}`] : currentSection,
@@ -127,23 +127,23 @@ calculateResults = () => {
   render() {
     const { currentSectionNumber, results, showResults } = this.state;
     return (
-      <div className="Questionnaire">
+      <div className='Questionnaire'>
         {showResults ? 
-          <ResultsPage results={results} /> :
-          this.choosePage(currentSectionNumber)
+          <ResultsPage results={results} /> : // results page
+          this.choosePage(currentSectionNumber) // normal question page
         }
 
-        {!showResults && currentSectionNumber > 0 &&
-          <input id="PrevButton" type="button" value="Prev" onClick={this.prevButtonHandler} />}
-        {!showResults && currentSectionNumber < 7 &&
-          <input id="NextButton" type="button" value="Next" onClick={this.nextButtonHandler} />}
-        {!showResults && currentSectionNumber === 7 &&
-          <input id="SubmitButton" type="button" value="Submit" onClick={this.submitButtonHandler} />}          
+        {!showResults && currentSectionNumber > 0 && // Previous button
+          <input id='PrevButton' type='button' value='Prev' onClick={this.prevButtonHandler} />}
+        {!showResults && currentSectionNumber < 7 && // Next button
+          <input id='NextButton' type='button' value='Next' onClick={this.nextButtonHandler} />}
+        {!showResults && currentSectionNumber === 7 && // Submit button
+          <input id='SubmitButton' type='button' value='Submit' onClick={this.submitButtonHandler} />}          
         {!showResults && this.state.error && <span className='error'>
           Distribute a total of 10 points among the statements
         </span> }
-        {!showResults && currentSectionNumber < 8 &&
-          <progress value={currentSectionNumber} max="8"></progress>}
+        {!showResults && currentSectionNumber < 8 && // Progress bar
+          <progress value={currentSectionNumber} max='8'></progress>}
       </div>
     );
   }

@@ -11,10 +11,10 @@ export default class Root extends Component {
   }
   privateRoute = (DestinationComponent) => {
     const { loggedIn } = this.state;
-    if(!loggedIn) this.isAuthenticated();
+    if(!loggedIn) this.isAuthenticated(); // Checks if your authenticated (async!)
 
-    let finalComponent = <Redirect to={{pathname: '/login'}}/>;
-    if(loggedIn) finalComponent = <DestinationComponent />;
+    let finalComponent = <Redirect to={{pathname: '/login'}}/>; // if not sends to login
+    if(loggedIn) finalComponent = <DestinationComponent />; // Otherwise sends you to where you wanted to go
 
     return finalComponent;
   }
@@ -27,7 +27,7 @@ isAuthenticated = async () => {
       })
 
       const result = await response.json();
-      this.setState({ loggedIn : result.loggedIn });
+      this.setState({ loggedIn : result.loggedIn }); // Updates the state
 };
 
     render() {

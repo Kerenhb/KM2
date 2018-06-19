@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuestionTable from './QuestionTable';
 
-class LandingPage extends Component {
+class LandingPage extends Component { // Example page (section 0)
   render() {
       const { exampleData } = this.props;
 
