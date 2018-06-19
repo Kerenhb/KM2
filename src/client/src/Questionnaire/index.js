@@ -76,7 +76,7 @@ submitButtonHandler = () => {
   }
 
   const results = this.calculateResults();
-  fetch('/user/1/test', { // TODO change to usersId
+  fetch('/user/test', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       credentials: 'include',

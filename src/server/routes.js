@@ -26,15 +26,15 @@ router.get('/verify', function(req, res) {
   return res.status(200).send({ user: null, loggedIn: false });
 });
 
-router.post('/user/:id/test', ensureAuthenticated, function(req, res) {
+router.post('/user/test', ensureAuthenticated, function(req, res) {
     // TODO: add timestamp
-    const { id } = req.params;
+    const { ID } = req.user;
     const { results } = req.body;
 
     const sumWeights = results.reduce((acc, cur) => acc + cur);
     if (sumWeights !== 70) return res.status(412).send('Weights must sum to 70');
 
-    connection.query(utils.insertTests(id, results),
+    connection.query(utils.insertTests(ID, results),
         function (err, results) {
             if (err) res.status(500).send(err)
             const testId = results.insertId;
