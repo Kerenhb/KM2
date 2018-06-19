@@ -3,7 +3,6 @@
 - Add a time-code of when you took the test (server side)
 - Deal with warning about going from unControlled to controlled input
 - Attempt to make number input look better (increase the width to match the cell?)
-- deal with ResultsPage warning
 
 *Security* Login screen with proper [hashed] security.
 - Link up error page

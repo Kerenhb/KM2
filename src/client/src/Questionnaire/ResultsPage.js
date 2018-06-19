@@ -6,14 +6,12 @@ class ResultsPage extends Component {
   convertResultsToRoles = () => {
     const { results } = this.props;
     const roleKeys = ['IM', 'CO', 'SH', 'PL', 'RI', 'ME', 'TW', 'CF'];
-    const parsedResults = [];
 
-    results.map( (result, index) => {
-        parsedResults.push({
+    const parsedResults = results.map( (result, index) => 
+        ({
             role: roleKeys[index],
             percentage: Math.round(result / 0.7),
-        });
-    });
+        }));
 
     return parsedResults.sort(function(a,b) { return b.percentage - a.percentage })
   };
