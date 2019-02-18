@@ -11,7 +11,7 @@ describe('LandingPage', () => {
     };
     const answers = { a : 5, b : 5 };
     
-    const mainComponent = shallow(
+    const component = shallow(
       <LandingPage
         exampleData = {exampleData}
         answers = {answers}
@@ -19,12 +19,12 @@ describe('LandingPage', () => {
     );
 
     it('displays the hard-coded explanation text', () => {
-        expect(mainComponent.find('h1').text()).to.equal('Explanation');
-        expect(mainComponent.find('p')).to.have.length(4);
+        expect(component.find('h1').text()).to.equal('Explanation');
+        expect(component.find('p')).to.have.length(4);
     });
 
     it('passes the correct props to QuestionTable', () => {
-        const QuestionTableProps = mainComponent.find(QuestionTable).props();
+        const QuestionTableProps = component.find(QuestionTable).props();
         
         expect(QuestionTableProps.className).to.equal('landingPageTable');
         expect(QuestionTableProps.titleText).to.equal(exampleData.titleText);
