@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import QuestionData from './QuestionData.json';
+import QuestionData from './QuestionData';
 import LandingPage from './LandingPage';
 import QuestionPage from './QuestionPage';
 import ResultsPage from './ResultsPage';
@@ -10,13 +10,13 @@ class Questionnaire extends Component {
     this.setState({
       currentSectionNumber: 0,
       section0: { a : 0, b : 3, c : 4, d : 0, e : 2, f : 1, g : 0, h : 0 }, // For example page
-      section1: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section2: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section3: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section4: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section5: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section6: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
-      section7: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0},
+      section1: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section2: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section3: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section4: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section5: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section6: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
+      section7: { a : 0, b : 0, c : 0, d : 0, e : 0, f : 0, g : 0, h : 0 },
       error: false, // Prevent changing page if there's an error
       showResults: false, // Only show the results when the questionnaire has been answered
       results: []
@@ -134,16 +134,16 @@ calculateResults = () => {
         }
 
         {!showResults && currentSectionNumber > 0 && // Previous button
-          <input id='PrevButton' type='button' value='Prev' onClick={this.prevButtonHandler} />}
+          <input className='PrevButton' id='PrevButton' type='button' value='Prev' onClick={this.prevButtonHandler} />}
         {!showResults && currentSectionNumber < 7 && // Next button
-          <input id='NextButton' type='button' value='Next' onClick={this.nextButtonHandler} />}
+          <input className='NextButton' id='NextButton' type='button' value='Next' onClick={this.nextButtonHandler} />}
         {!showResults && currentSectionNumber === 7 && // Submit button
-          <input id='SubmitButton' type='button' value='Submit' onClick={this.submitButtonHandler} />}          
+          <input className='SubmitButton' id='SubmitButton' type='button' value='Submit' onClick={this.submitButtonHandler} />}          
         {!showResults && this.state.error && <span className='error'>
           Distribute a total of 10 points among the statements
         </span> }
         {!showResults && currentSectionNumber < 8 && // Progress bar
-          <progress value={currentSectionNumber} max='8'></progress>}
+          <progress value={currentSectionNumber} max={8}></progress>}
       </div>
     );
   }
