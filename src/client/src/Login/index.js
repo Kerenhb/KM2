@@ -4,15 +4,15 @@ class Login extends Component {
   render() {
       return(
       <form action="/login" method="post">
-      <div>
+      <div className = 'username'>
           <label>Username:</label>
           <input type="text" name="username"/>
       </div>
-      <div>
+      <div className = 'password'>
           <label>Password:</label>
           <input type="password" name="password"/>
       </div>
-      <div>
+      <div className = 'submit'>
           <input type="submit" value="Log In"/>
       </div>
   </form>
