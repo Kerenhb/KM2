@@ -4,16 +4,16 @@ import { shallow } from 'enzyme';
 import Login from './index';
 
 describe('Login', () => {
-    const mainComponent = shallow(<Login />);
+    const component = shallow(<Login />);
     it('has the correct form action', () => {
-      const formProps = mainComponent.find('form').props();
+      const formProps = component.find('form').props();
 
       expect(formProps.action).to.equal('/login');
       expect(formProps.method).to.equal('post');
     });
 
     it('renders the username field', () => {
-      const username = mainComponent.find('.username');
+      const username = component.find('.username');
       expect(username.text()).to.equal('Username:');
 
       const inputProps = username.find('input').props();
@@ -22,7 +22,7 @@ describe('Login', () => {
     });
 
     it('renders the password field', () => {
-      const password = mainComponent.find('.password');
+      const password = component.find('.password');
       expect(password.text()).to.equal('Password:');
 
       const inputProps = password.find('input').props();
@@ -31,7 +31,7 @@ describe('Login', () => {
     });
 
     it('renders the submit field', () => {
-      const submit = mainComponent.find('.submit');
+      const submit = component.find('.submit');
 
       const inputProps = submit.find('input').props();
       expect(inputProps.type).to.equal('submit');

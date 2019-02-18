@@ -4,9 +4,9 @@ import { mount } from 'enzyme';
 import Questionnaire from '../index';
 
 describe('Questionnaire', () => {
-    const mainComponent = mount(<Questionnaire />);
+    const component = mount(<Questionnaire />);
     
-    it('renders the mainComponent', () => {
-        expect(mainComponent).to.exist;
+    it('renders the Questionnaire', () => {
+        expect(component).to.exist;
     });
 });
