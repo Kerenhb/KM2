@@ -3,20 +3,25 @@ import React, { Component } from 'react';
 
 import Questionnaire from './Questionnaire/index';
 import Login from './Login';
+import ErrorPage from './ErrorPage';
 
 export default class Root extends Component {
   constructor(props) {
     super(props)
-    this.state = { loggedIn : false }
+    this.state = { loggedIn : false } // Basic state
   }
-  privateRoute = (DestinationComponent) => {
+  privateRoute = DestinationComponent => {
+    // Ensures that you can only navigate to the DestinationComponent if your logged in
     const { loggedIn } = this.state;
-    if(!loggedIn) this.isAuthenticated(); // Checks if your authenticated (async!)
-
     let finalComponent = <Redirect to={{pathname: '/login'}}/>; // if not sends to login
-    if(loggedIn) finalComponent = <DestinationComponent />; // Otherwise sends you to where you wanted to go
-
-    return finalComponent;
+    try {
+      if(loggedIn) return finalComponent = <DestinationComponent />; // Sends you to where you wanted to go, if your logged in
+      this.isAuthenticated(); // Otherwise checks if your authenticated (async!)
+    } catch(error) {
+      finalComponent = <Redirect to={{pathname: '/ErrorPage'}}/>; // if not sends to login
+    } finally {
+      return finalComponent;
+    }
   }
   
 isAuthenticated = async () => {
@@ -43,7 +48,7 @@ isAuthenticated = async () => {
 
                 <Route exact path="/login" component={Login}/>
                 <Route path="/Questionnaire" render={() => this.privateRoute(Questionnaire)}/>
-                <Route path="/error" render={() => <div>Error!</div>}/>
+                <Route path="/error" component={ErrorPage}/>
             </div>
             </Router>
       );
