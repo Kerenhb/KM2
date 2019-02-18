@@ -65,6 +65,7 @@ QuestionTable.propTypes = {
 };
 
 QuestionTable.defaultProps = {
+    sectionNumber : 0,
     onChange : () => {}
 }
 
