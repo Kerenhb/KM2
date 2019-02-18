@@ -2,6 +2,8 @@
 A program to help you find your preferred role in a team, created for my apprenticeship.
 The program is based of a questionnaire from Stellar Leadership (http://stellarleadership.com/).
 
+NOTE the Program isn't complete, but is in a usable state, although it does require running the mySQL database locally.
+
 ## Scripts
 ### Start
 Start both the client and the server with 'npm start'. 'npm run client' and 'npm run server' start the server and client separately if needed.
