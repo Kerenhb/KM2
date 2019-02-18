@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RoleDescriptions from './RoleDescriptions.json';
+import RoleDescriptions from './RoleDescriptions';
 import './Questionnaire.css';
 
 class ResultsPage extends Component {
@@ -45,7 +45,7 @@ class ResultsPage extends Component {
         const thirdRole = results[2].role;
         return (
             <div>
-                <p>Your top three roles are: {RoleDescriptions[topRole].Type}, {RoleDescriptions[secondRole].Type} and {RoleDescriptions[thirdRole].Type}.</p>
+                <p className='topRoles'>Your top three roles are: {RoleDescriptions[topRole].Type}, {RoleDescriptions[secondRole].Type} and {RoleDescriptions[thirdRole].Type}.</p>
                 <table className='ResultsTable'>
                     <thead><tr>
                         <th>Type</th>
@@ -62,7 +62,7 @@ class ResultsPage extends Component {
                         <tr className='summary'><td colSpan='3'>{RoleDescriptions[thirdRole].Summary}</td></tr>
                     </tbody>
                 </table>
-                <div>
+                <div className = 'detailedResults'>
                     Here is the detailed (rounded) breakdown of your roles: {this.constructDetailedRows(results)}
                 </div>
             </div>
